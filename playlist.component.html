@@ -1,0 +1,42 @@
+<h3> iffa's playlist will go here <h3>
+
+<!--create a table with grey hover effect-->
+<table class="table table-hover">
+	<thead> <!--tag used to group header content-->
+		<!--this is what I have in my table-->
+		<tr> <!--this is tag defining a row in table-->
+			<td>ID</td> <!--standard cell tag contains data-->
+			<td>Title</td>
+			<td>videoCode</td>
+			<td>Description</td>
+
+
+
+		</tr>
+	</thead>
+
+	<tbody> <!--tag used to group body together-->
+
+	<!--loop semua video array then refer sbgai v-->
+		<tr *ngFor="#v of videos" (click)="onSelect(v)"> <!--click fn ni bt prog tahu nak pass info yg mn mengikut ap yg user click-->
+			<!--this binding method acquiring video data from my app.component-->
+			<td>{{v.id}}</td> 
+			<td>{{v.title}}</td>
+			<td>{{v.videoCode}} </td>
+			<td>{{v.desc}}</td>
+
+			<iframe id=v.id title=v.title width="480" height="390" src="http://www.youtube.com/embed/\{{v.videoCode}}" frameborder="0" allowfullscreen> </iframe> <!--guna backslash so ang evaluate +replavceAngular to evaluate + replace handlebar -->
+
+			
+
+		</tr>
+
+			
+
+			 
+
+			
+
+	</tbody>
+
+</table>
